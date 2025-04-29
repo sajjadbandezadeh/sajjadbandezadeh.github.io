@@ -208,8 +208,14 @@ h6 {
 }
 
 @media (max-width: 1199px) {
+  #hero > div:nth-child(4) {
+    left: 7vw !important;
+  }
+
   .header {
     left: -100%;
+    backdrop-filter: unset !important;
+    background: rgb(29 29 29 / 98%) !important;
   }
 }
 
