@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome | Ebcore v1.0.0</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <script src="assets/js/jquery.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/sajjadbandezadeh/ebcore-framework/refs/heads/master/logo.svg"/>
+</head>
+<body>
+<div style="position: absolute; left: 0;top: 0; padding:3px; border-radius: 7px; background-color: black;color: #dbc3ff; font-size: 10px; margin: 4px">
+    version 1.0.0 (latest release)
+</div>
+<div class="shadow-title parallax-top-shadow">Ebcore</div>
+<div class="section-parallax parallax-00"
+     style="background-image: url('assets/img/parallax-0.png');"></div>
+<div class="section-parallax parallax-01"
+     style="background-image: url('assets/img/parallax-01.png');"></div>
+<div class="section full-height">
+    <div class="section-title-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 text-center parallax-fade-top mt-5 pt-5">
+                    <p style="text-align: left">inspired by Entity-Based architecture</p>
+                    <h1 style="text-align: left;font-size: 3vw">Ebcore <br>PHP Framework</h1>
+                </div>
+                <div class="col-6 text-center parallax-fade-top">
+                <pre style="text-align: left; color: white;
+                 background-color: rgba(31,32,41,0.42);
+                 background: rgba(31,32,41,0.2);
+                 border-radius: 16px;
+                 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                 backdrop-filter: blur(5px);
+                 -webkit-backdrop-filter: blur(5px);">
+                    my-project/
+                    ├── app/
+                    │   └── entities/
+                    │       └── User/
+                    │           ├── Controllers/
+                    │           │   └── UserController.php
+                    │           ├── Events/
+                    │           │   └── UserRegisterEvent.php
+                    │           └── Middlewares/
+                    │               └── PermissionMiddleware.php
+                    ├── config/
+                    │   ├── app.json
+                    │   ├── database.json
+                    │   └── middleware.json
+                    ├── public/
+                    │   ├── .htaccess
+                    │   └── index.php
+                    ├── routes/
+                    │   └── web.php
+                    └── vendor/
+                        └── ebcore/
+                            ├── Core/
+                            ├── Middlewares/
+                            └── Packages/
+                </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section full-height z-bigger">
+    <ul class="case-study-wrapper" style="margin-top: 40px !important;">
+        <li class="case-study-name">
+            <a href="docs/index.html#entity" class="hover-target">Entity-Based</a>
+        </li>
+        <li class="case-study-name">
+            <a href="docs/index.html#routes" class="hover-target">Routes</a>
+        </li>
+        <li class="case-study-name">
+            <a href="docs/index.html#middlewares" class="hover-target">Middlewares</a>
+        </li>
+        <li class="case-study-name">
+            <a href="docs/index.html#events" class="hover-target">Events</a>
+        </li>
+    </ul>
+    <ul class="case-study-images">
+        <li>
+            <div class="img-hero-background" style="position: relative; align-items: center">
+                <img src="assets/img/1.png" alt="">
+            </div>
+            <div class="hero-number-back">01</div>
+            <div class="hero-number">01</div>
+            <div class="hero-number-fixed">04</div>
+            <div class="case-study-title">Entity-Based Architecture</div>
+        </li>
+        <li>
+            <div class="img-hero-background" style="position: relative; align-items: center">
+                <img src="assets/img/2.png" alt="">
+            </div>
+            <div class="hero-number-back">02</div>
+            <div class="hero-number">02</div>
+            <div class="case-study-title">Modern Routing System</div>
+        </li>
+        <li>
+            <div class="img-hero-background" style="position: relative; align-items: center">
+                <img src="assets/img/3.png" alt="">
+            </div>
+            <div class="hero-number-back">03</div>
+            <div class="hero-number">03</div>
+            <div class="case-study-title">Powerful Middleware System</div>
+        </li>
+        <li>
+            <div class="img-hero-background" style="position: relative; align-items: center">
+                <img src="assets/img/4.png" alt="">
+            </div>
+            <div class="hero-number-back">04</div>
+            <div class="hero-number">04</div>
+            <div class="case-study-title">Event System</div>
+        </li>
+    </ul>
+</div>
+<div class="section padding-top-bottom over-hide background-dark z-bigger-2">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-7 text-center">
+                <a href="docs/index.html" class="hover-target">
+                    <div class="project-link-wrap">
+                        <p>Documents</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="scroll-to-top hover-target"></div>
+<div class='cursor' id="cursor"></div>
+<div class='cursor2' id="cursor2"></div>
+<div class='cursor3' id="cursor3"></div>
+
+<a href="https://github.com/sajjadbandezadeh/ebcore-framework" class="link-to-portfolio hover-target" target=”_blank”></a>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
