@@ -2,9 +2,1807 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DOCS</title>
+    <title>Ebcore Framework Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css'>
+    <link rel='stylesheet' href='https://unpkg.com/css-pro-layout@1.1.0/dist/css/css-pro-layout.css'>
+    <link rel='stylesheet'
+          href='https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;display=swap'>
+    <link rel="stylesheet" href="./style.css">
 </head>
-<body>
 
+<body>
+<!-- partial:index.partial.html -->
+<div class="layout has-sidebar fixed-sidebar fixed-header">
+    <aside id="sidebar" class="sidebar break-point-sm has-bg-image">
+        <a id="btn-collapse" class="sidebar-collapser"><i class="ri-arrow-left-s-line"></i></a>
+        <div class="image-wrapper">
+            <img src="https://raw.githubusercontent.com/sajjadbandezadeh/ebcore-framework/refs/heads/master/logo.svg"
+                 alt="sidebar background"/>
+        </div>
+        <div class="sidebar-layout">
+            <div class="sidebar-header">
+                <div class="pro-sidebar-logo">
+                    <div>E</div>
+                    <h5><a href="../index.html" style="color: whitesmoke; font-size: 20px">Ebcore Framework</a></h5>
+                </div>
+            </div>
+            <div class="sidebar-content">
+                <nav class="menu open-current-submenu">
+                    <ul>
+                        <li class="menu-header"><span> Documentation </span></li>
+                        <li class="menu-item sub-menu">
+                            <a href="#">
+                                <!--                    <span class="menu-icon">-->
+                                <!--                      <i class="ri-vip-diamond-fill"></i>-->
+                                <!--                    </span>-->
+                                <span class="menu-title">Getting Started</span>
+                            </a>
+                            <div class="sub-menu-list">
+                                <ul>
+                                    <li class="menu-item">
+                                        <a href="#installation">
+                                            <span class="menu-title">Installation</span>
+                                        </a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#config">
+                                            <span class="menu-title">Configuration</span>
+                                        </a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#structure">
+                                            <span class="menu-title">Directory Structure</span>
+                                        </a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#starter">
+                                            <span class="menu-title">Starter Kits</span>
+                                        </a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#deployment">
+                                            <span class="menu-title">Deployment</span>
+                                        </a>
+                                    </li>
+                                    <!--                      <li class="menu-item sub-menu">-->
+                                    <!--                        <a href="#">-->
+                                    <!--                          <span class="menu-title">Forms</span>-->
+                                    <!--                        </a>-->
+                                    <!--                        <div class="sub-menu-list">-->
+                                    <!--                          <ul>-->
+                                    <!--                            <li class="menu-item">-->
+                                    <!--                              <a href="#">-->
+                                    <!--                                <span class="menu-title">Input</span>-->
+                                    <!--                              </a>-->
+                                    <!--                            </li>-->
+                                    <!--                            <li class="menu-item">-->
+                                    <!--                              <a href="#">-->
+                                    <!--                                <span class="menu-title">Select</span>-->
+                                    <!--                              </a>-->
+                                    <!--                            </li>-->
+                                    <!--                            <li class="menu-item sub-menu">-->
+                                    <!--                              <a href="#">-->
+                                    <!--                                <span class="menu-title">More</span>-->
+                                    <!--                              </a>-->
+                                    <!--                              <div class="sub-menu-list">-->
+                                    <!--                                <ul>-->
+                                    <!--                                  <li class="menu-item">-->
+                                    <!--                                    <a href="#">-->
+                                    <!--                                      <span class="menu-title">CheckBox</span>-->
+                                    <!--                                    </a>-->
+                                    <!--                                  </li>-->
+                                    <!--                                  <li class="menu-item">-->
+                                    <!--                                    <a href="#">-->
+                                    <!--                                      <span class="menu-title">Radio</span>-->
+                                    <!--                                    </a>-->
+                                    <!--                                  </li>-->
+                                    <!--                                  <li class="menu-item sub-menu">-->
+                                    <!--                                    <a href="#">-->
+                                    <!--                                      <span class="menu-title">Want more ?</span>-->
+                                    <!--                                      <span class="menu-suffix">&#x1F914;</span>-->
+                                    <!--                                    </a>-->
+                                    <!--                                    <div class="sub-menu-list">-->
+                                    <!--                                      <ul>-->
+                                    <!--                                        <li class="menu-item">-->
+                                    <!--                                          <a href="#">-->
+                                    <!--                                            <span class="menu-prefix">&#127881;</span>-->
+                                    <!--                                            <span class="menu-title">You made it </span>-->
+                                    <!--                                          </a>-->
+                                    <!--                                        </li>-->
+                                    <!--                                      </ul>-->
+                                    <!--                                    </div>-->
+                                    <!--                                  </li>-->
+                                    <!--                                </ul>-->
+                                    <!--                              </div>-->
+                                    <!--                            </li>-->
+                                    <!--                          </ul>-->
+                                    <!--                        </div>-->
+                                    <!--                      </li>-->
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#routes">
+                                <span class="menu-title">Routes</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#controller">
+                                <span class="menu-title">Controllers</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#middleware">
+                                <span class="menu-title">Middleware</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#events">
+                                <span class="menu-title">Events</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#cache">
+                                <span class="menu-title">Cache System</span>
+                            </a>
+                        </li>
+
+                        <li class="menu-header" style="padding-top: 20px"><span> EXTRA </span></li>
+                        <li class="menu-item">
+                            <a href="https://github.com/sajjadbandezadeh/ebcore-framework/releases/tag/v1.0.0">
+                                <span class="menu-title">Release Notes</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="https://github.com/sajjadbandezadeh/">
+                                <span class="menu-title">Developer</span>
+                                <span class="menu-suffix">
+                      <span class="badge secondary">Github</span>
+                    </span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="https://bandezadeh.ir">
+                                <span class="menu-title">Developer</span>
+                                <span class="menu-suffix">
+                      <span class="badge primary">Website</span>
+                    </span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="sidebar-footer">
+                <div class="footer-box">
+                    <div>
+                        <img class="react-logo"
+                             src="https://raw.githubusercontent.com/sajjadbandezadeh/ebcore-framework/refs/heads/master/logo.svg"
+                             alt="react"/>
+                    </div>
+                    <div style="padding: 0 10px">
+                <span style="display: block; margin-bottom: 10px">
+                  Get Ebcore Skeleton prject from Github
+                </span>
+                        <div>
+                            <a href="https://github.com/sajjadbandezadeh/ebcore-skeleton" target="_blank">Check it
+                                out!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <div id="overlay" class="overlay"></div>
+    <div class="layout">
+        <main class="content">
+
+
+            <!-- Start Main -->
+            <div style="padding-top: 40px">
+                <a id="btn-toggle" href="#" class="sidebar-toggler break-point-sm">
+                    <i class="ri-menu-line ri-xl"></i>
+                </a>
+                <h1 style="margin-bottom: 0">Ebcore Entity-Based - PHP Framework</h1><br>
+                <span style="display: inline-block">
+              Ebcore is a modern and powerful PHP framework inspired by Entity-Based architecture.<br> It helps you build complex web applications with ease and elegance.
+            </span>
+                <br/>
+                <br/>
+                <br/>
+                <b>Key Features:</b><br>
+                <ul>
+                    <li>🏗️ Entity-Based Architecture</li>
+                    <li>🛣️ Modern Routing System</li>
+                    <li>🔒 Powerful Middleware System</li>
+                    <li>⚡ Advanced Caching</li>
+                    <li>🎯 Event System</li>
+                    <li>📝 Logging System</li>
+                    <li>🔐 Security Features</li>
+                    <li>⚙️ Flexible Configuration</li>
+                </ul>
+            </div>
+            <!-- End Main Content -->
+
+            <!--Installation Section-->
+            <div id="installation" style="padding-top: 10px">
+                <h2>
+                    Installation
+                </h2>
+                <hr>
+                Create a new project with Ebcore:
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc"><span style="color: #c4be83">composer</span> create-project ebcore/skeleton my-project</span></div></code></pre>
+                    </div>
+                </div>
+                After successful installation you will see this messages :
+                <div class="code-container">
+                    <div class="relative code-block-wrapper"><pre style="color: #13a00e !important;"><code
+                            style="background-color: #292D3E;"><div class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">1</span><span style="color: #13a00e">Creating a "ebcore/skeleton" project at "./my-project"</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">2</span><span style="color: #13A00EFF">Installing ebcore/skeleton (<span
+                            style="color: #c09b01">v1.0.1</span>)</span></div><div class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">3</span><span style="color: #13A00EFF"><span
+                            style="color: white">  - Installing</span> ebcore/skeleton (<span
+                            style="color: #c09b01">v1.0.1</span>): Extracting archive</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">4</span><span style="color: #13A00EFF">Created project in S:\wamp64\www\my-project</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">5</span><span style="color: #13A00EFF">Loading composer repositories with package information</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">6</span><span
+                            style="color: #13A00EFF">Updating dependencies</span></div><div class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">7</span><span style="color: #13A00EFF">Lock file operations: 1 install, 0 updates, 0 removals</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">8</span><span style="color: #13A00EFF"><span
+                            style="color: white">  - Locking</span> ebcore/framework (<span
+                            style="color: #c09b01">v1.0.1</span>)</span></div><div class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">9</span><span style="color: #13A00EFF">Writing lock file</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">10</span><span style="color: #13A00EFF">Installing dependencies from lock file (including require-dev)</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">11</span><span style="color: #13A00EFF">Installing dependencies from lock file (including require-dev)</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">12</span><span style="color: #13A00EFF">Package operations: 1 install, 0 updates, 0 removals</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">13</span><span style="color: #13A00EFF"><span
+                            style="color: white">  - Installing</span> ebcore/framework (<span
+                            style="color: #c09b01">v1.0.1</span>): Extracting archive</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">14</span><span style="color: #13A00EFF">Generating optimized autoload files</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">15</span><span
+                            style="color: #13A00EFF">And more lines ...</span></div></code></pre>
+                    </div>
+                </div>
+            </div>
+            <!--End Installation Section-->
+
+            <!--Config Section-->
+            <div id="config" style="padding-top: 10px">
+                <h2>
+                    Configuration
+                </h2>
+                <hr>
+                <h3>
+                    Database Connection Configuration
+                </h3>
+                <p>
+                    To set up the connection to your database, you need to configure the database.json file located in
+                    the config folder. This file contains essential information such as the host, database name,
+                    username, and password, which the application uses to establish a connection with your database.
+                    Below is an example structure of the configuration file :
+                </p>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color:white;">{</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">2</span><span style="color:white;">  "db": {</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">3</span><span style="color:white;">      "host": "localhost",</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">4</span><span
+                                style="color:white;">      "database": "ebcore_db",</span></div><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">5</span><span style="color:white;">      "username": "root",</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">6</span><span style="color:white;">      "password": ""</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">7</span><span style="color:white;">  }</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">8</span><span style="color:white;">}</span></div></code></pre>
+                    </div>
+                </div>
+                <h4>
+                    Fields explained:
+                </h4>
+                <ul>
+                    <li>host: The database server address (usually localhost for local setups)</li>
+                    <li>database: The name of your database the application will connect to</li>
+                    <li>username: The username for database authentication</li>
+                    <li>password: The password for the database user</li>
+                </ul>
+                Make sure to replace these values with your actual database credentials to ensure the application can
+                connect successfully.
+                <h3>
+                    Application Information (app.json)
+                </h3>
+                <p>
+                    This file contains general information and configuration settings related to the project itself. It
+                    is used internally within the application and does not directly affect the core functionality.
+                    However, filling in accurate data can help with project management, debugging, and providing
+                    contextual information about your application to other developers or documentation tools.
+                </p>
+                <p>
+                    You can include additional details about your project here, such as its name, version, environment
+                    mode, timezone, language settings, and the base URL. These values are useful for configuring the
+                    application’s behavior and presentation.
+                </p>
+                <h4>
+                    Example structure of app.json:
+                </h4>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                <pre><code style="background-color: #292D3E;"><div class="line"><span
+                        style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                        class="line-number">1</span><span style="color:white;">{</span></div><div class="line"><span
+                        style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                        class="line-number">2</span><span
+                        style="color:white;">  "name": "Ebcore Framework Skeleton",</span></div><div class="line"><span
+                        style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                        class="line-number">3</span><span style="color:white;">  "version": "1.0.0",</span></div><div
+                        class="line"><span
+                        style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                        class="line-number">4</span><span style="color:white;">  "debug": true,</span></div><div
+                        class="line"><span
+                        style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                        class="line-number">5</span><span style="color:white;">  "timezone": "Asia/Tehran",</span></div><div
+                        class="line"><span
+                        style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                        class="line-number">6</span><span style="color:white;">  "locale": "fa",</span></div><div
+                        class="line"><span
+                        style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                        class="line-number">7</span><span style="color:white;">  "url": "http://localhost"</span></div><div
+                        class="line"><span
+                        style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                        class="line-number">8</span><span style="color:white;">}</span></div></code></pre>
+                    </div>
+                </div>
+                <h4>
+                    Fields explained:
+                </h4>
+                <ul>
+                    <li>name: The name of your project or framework.</li>
+                    <li>version: The current version of your project.</li>
+                    <li>debug: A boolean indicating whether the application runs in debug mode.</li>
+                    <li>timezone: The timezone setting for your application.</li>
+                    <li>locale: Language/locale setting, for example, 'fa' for Persian.</li>
+                    <li>url: The base URL of your application, useful for generating links and redirects.</li>
+                </ul>
+                <p>
+                    Feel free to add more custom fields to this JSON file to include other relevant information about
+                    your project, such as author details, description, or deployment environment.
+                </p>
+            </div>
+            <!--End Config Section-->
+
+            <!--Directory Structure-->
+            <div id="structure" style="padding-top: 10px">
+                <h2>
+                    Directory Structure
+                </h2>
+                <hr>
+                <h3>
+                    Entity-Base PHP Framework
+                </h3>
+                <p>
+                    This project structure follows a modular and organized design centered around core entities,
+                    facilitating a clear separation of concerns. The app/ directory contains the main application logic,
+                    with subfolders for entities—each representing a key data entity like User. Inside each entity
+                    folder, there are dedicated sections for Controllers, Events, and Middlewares, which handle specific
+                    responsibilities related to that entity, such as processing user requests, managing events like
+                    registration, and enforcing permissions.
+                </p>
+                <p>
+                    The config/ folder holds configuration files such as app.json for general project settings, and
+                    database.json for database connection details, ensuring easy management of environment-specific
+                    parameters. The public/ directory serves static content like stylesheets, scripts, or the main entry
+                    point index.php, which handles all incoming HTTP requests.
+                </p>
+                <pre>
+                    my-project/
+                    ├── app/
+                    │   └── entities/
+                    │       └── User/
+                    │           ├── Controllers/
+                    │           │   └── UserController.php
+                    │           ├── Events/
+                    │           │   └── UserRegisterEvent.php
+                    │           └── Middlewares/
+                    │               └── PermissionMiddleware.php
+                    ├── config/
+                    │   ├── app.json
+                    │   ├── database.json
+                    │   └── middleware.json
+                    ├── public/
+                    │   ├── .htaccess
+                    │   └── index.php
+                    ├── routes/
+                    │   └── web.php
+                    └── vendor/
+                        └── ebcore/
+                            ├── Core/
+                            ├── Middlewares/
+                            └── Packages/
+                </pre>
+                <p>
+                    The routes/ folder contains route definitions, mapping URLs to the corresponding controllers,
+                    enabling flexible URL management and request handling. The vendor/ directory is used for third-party
+                    libraries installed via Composer, providing reusable components and tools for development.
+                </p>
+                <p>
+                    Overall, this architecture emphasizes modularity, maintainability, and scalability. It groups
+                    related functionalities around entities, making it easier to develop, test, and extend the
+                    application. The clear separation of configuration, core logic, and static assets aligns with best
+                    practices in modern PHP application design, leading to a clean, organized, and efficient project
+                    structure.
+                </p>
+            </div>
+            <!--End Directory Structure-->
+
+            <!--Starter Kit Overview-->
+            <div id="starter" style="padding-top: 10px">
+                <h2>
+                    Starter Kit Overview
+                </h2>
+                <hr>
+                <p>
+                    This starter kit provides a ready-to-use architecture based on the Entity-Driven structure, designed
+                    for rapid development of robust PHP applications. Built with clarity and flexibility in mind, it
+                    includes pre-defined components like UserController, event handling, middleware, and customizable
+                    responses.
+                </p>
+                <p>
+                    Developers can easily extend this skeleton by adding new entities, defining routes, and customizing
+                    event workflows. The included route examples demonstrate how to handle events, middleware, and
+                    custom responses, enabling quick prototyping and scalable development.
+                </p>
+                <p>
+                    Whether you're starting a new project or learning best practices for organized PHP coding, this kit
+                    offers a solid foundation. It encourages modular design, clean code, and easy integration with
+                    third-party packages.
+                </p>
+            </div>
+            <!--End Starter Kit Overview-->
+
+            <!--Deployment-->
+            <div id="deployment" style="padding-top: 10px">
+                <h2>
+                    Deployment
+                </h2>
+                <hr>
+                <h3>
+                    Deployment Instructions
+                </h3>
+                To deploy this project:
+                <ul>
+                    <li>
+                        Clone the repository: git clone https://github.com/sajjadbandezadeh/ebcore-skeleton.git
+                    </li>
+                    <li>
+                        Install dependencies: composer install
+                    </li>
+                    <li>
+                        Configure your environment by editing the config files (app.json, database.json)
+                    </li>
+                    <li>
+                        Upload files to your server, ensuring proper permissions
+                    </li>
+                    <li>
+                        Set up your web server to serve the project (Apache/Nginx)
+                    </li>
+                    <li>
+                        Create and migrate your database
+                    </li>
+                </ul>
+            </div>
+            <!--Deployment-->
+
+            <!--Routes-->
+            <div id="routes" style="padding-top: 10px">
+                <h2>
+                    Routing Structure
+                </h2>
+                <hr>
+                In Ebcore, routes are defined using the $router->map() method, which registers each route with specific
+                parameters. The syntax for each route is:
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">$router->map($method, $path, $modelName, $controller, $action, $event = null, $type = null, $middlewares = [])</span></div></code></pre>
+                    </div>
+                </div>
+                <h3>
+                    Parameters:
+                </h3>
+                <ul>
+                    <li>$method: The HTTP request method (e.g., GET, POST, PUT, DELETE)</li>
+                    <li>$path: The URL pattern, with support for parameters (e.g., /users/{id})</li>
+                    <li>$modelName: The model associated with this route (replaces the concept of "category")</li>
+                    <li>$controller: The controller class handling this route (e.g., 'UserController')</li>
+                    <li>$action: The method inside the controller to execute (e.g., 'index')</li>
+                    <li>$event (optional): The event to trigger after or before executing the route. This is used for
+                        event-driven actions.
+                    </li>
+                    <li>$type (optional): When specifying an $event, this defines whether the event fires before
+                        ('before') or after ('after') the controller action.
+                    </li>
+                    <li>$middlewares (optional): An array of middleware classes that run before (or after) the route
+                        executes, used for tasks like permission checks.
+                    </li>
+                </ul>
+                <h3>
+                    Key Points:
+                </h3>
+                <ul>
+                    <li>
+                        The $modelName indicates the main data model the route pertains to.
+                    </li>
+                    <li>
+                        When an $event is assigned, $type must be specified as 'before' or 'after', to indicate whether
+                        the event triggers before or after the controller action.
+                    </li>
+                    <li>
+                        Multiple middlewares can be added in the $middlewares array, which are executed in order.
+                    </li>
+                </ul>
+                <br>
+                <h2>
+                    Route Examples:
+                </h2>
+                <div>
+                    <h3>
+                        1. Welcome Page
+                    </h3>
+                    <div class="code-container">
+                        <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">$router->map('GET', '/', 'System', 'SystemController', 'welcome');</span></div></code></pre>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Method: GET</li>
+                        <li>Path: /</li>
+                        <li>Model: System</li>
+                        <li>Controller: SystemController</li>
+                        <li>Action: welcome</li>
+                    </ul>
+                    <b>The `SystemController` and `System` action are reserved by Ebcore and cannot be used.</b>
+                </div>
+                <div>
+                    <h3>
+                        2. List Users
+                    </h3>
+                    <div class="code-container">
+                        <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">$router->map('GET', '/users', 'User', 'UserController', 'index');</span></div></code></pre>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Method: GET</li>
+                        <li>Path: /users</li>
+                        <li>Model: User</li>
+                        <li>Controller: UserController</li>
+                        <li>Action: index</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>
+                        3. Run Event After Listing Users
+                    </h3>
+                    <div class="code-container">
+                        <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">$router->map('GET', '/users/event', 'User', 'UserController', 'index', 'UserRegisterEvent', 'after');</span></div></code></pre>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Method: GET</li>
+                        <li>Path: /users/event</li>
+                        <li>Model: User</li>
+                        <li>Controller: UserController</li>
+                        <li>Action: index</li>
+                        <li>Event: 'UserRegisterEvent'</li>
+                        <li>Type: 'after'</li>
+                    </ul>
+                    <i>This indicates that after executing the index method, the UserRegisterEvent will be
+                        triggered.</i>
+                </div>
+                <div>
+                    <h3>
+                        4. Get User by ID
+                    </h3>
+                    <div class="code-container">
+                        <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">$router->map('GET', '/users/{id}', 'User', 'UserController', 'getById');</span></div></code></pre>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Method: GET</li>
+                        <li>Path: /users/{id}</li>
+                        <i>ID is a dynamic parameter passed to the controller method.</i>
+                        <li>Model: User</li>
+                        <li>Controller: UserController</li>
+                        <li>Action: getById</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>
+                        5. Custom Response
+                    </h3>
+                    <div class="code-container">
+                        <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">$router->map('GET', '/users/customResponse', 'User', 'UserController', 'indexCustomResponse');</span></div></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3>
+                        6. Custom Data
+                    </h3>
+                    <div class="code-container">
+                        <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">$router->map('GET', '/users/customData', 'User', 'UserController', 'indexCustomData');</span></div></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3>
+                        7. Create User
+                    </h3>
+                    <div class="code-container">
+                        <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">$router->map('POST', '/users/create', 'User', 'UserController', 'create');</span></div></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3>
+                        8. Edit User by ID
+                    </h3>
+                    <div class="code-container">
+                        <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">$router->map('PUT', '/users/{id}', 'User', 'UserController', 'edit');</span></div></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3>
+                        9. Delete User by ID with Middleware
+                    </h3>
+                    <div class="code-container">
+                        <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">$router->map('DELETE', '/users/{id}', 'User', 'UserController', 'delete', null, null, ['CheckUserPermissionMiddleware']);</span></div></code></pre>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Middleware: 'CheckUserPermissionMiddleware' runs before the delete action to verify
+                            permissions.
+                        </li>
+                    </ul>
+                </div>
+                <h3>Summary:
+                </h3>
+                <ul>
+                    <li>Routes are explicitly defined with HTTP method, URL pattern, model, controller, and action.</li>
+                    <li>Optional parameters like events ($event) and their timing ($type) specify event-driven triggers
+                        around controller execution.
+                    </li>
+                    <li>Middleware can be attached to extend functionality, such as permissions or logging.</li>
+                    <li>Dynamic URL parameters (like {id}) are passed directly to controller methods.</li>
+                </ul>
+            </div>
+            <!--Routes-->
+
+            <!--Controllers-->
+            <div id="controller" style="padding-top: 10px">
+                <h2>
+                    Controllers
+                </h2>
+                <hr>
+                <p>
+                    This section provides an overview of the architecture and responsibilities of the core framework's
+                    controller class, which serves as the foundation for custom controllers in the application.
+                </p>
+                <h3>
+                    Overview
+                </h3>
+                <p>
+                    The base controller class in the framework acts as a mediator between HTTP requests and application
+                    logic. It provides essential functionalities such as returning JSON responses, handling request
+                    data, and interacting with the database via the DbContext. Custom controllers, like UserController,
+                    extend this base class to implement specific features and business logic.
+                </p>
+                <h3>
+                    Responsibilities
+                </h3>
+                <ul>
+                    <li>Managing incoming requests and routing to appropriate methods.</li>
+                    <li>Returning responses in various formats (JSON, HTML, etc.).</li>
+                    <li>Interacting with the database through DbContext.</li>
+                    <li>Handling success and error responses consistently.</li>
+                    <li>Optional: Triggering events after or before method execution.</li>
+                    <li>Protecting routes with middleware.</li>
+                </ul>
+                <h3>
+                    Typical Workflow
+                </h3>
+                <p>
+                    1.Request Handling:
+                    When a route matches, the corresponding controller method is invoked.
+                </p>
+                <p>
+                    2.Database Interaction:
+                    Controller uses DbContext to perform CRUD operations on entities.
+                </p>
+                <p>
+                    3.Response Formation:
+                    Results are returned using the framework's Response class, typically in JSON format.
+                </p>
+                <p>
+                    4.Event & Middleware Handling:
+                <ul>
+                    <li>If specified, events can be triggered before or after the main action.</li>
+                    <li>Middleware can be executed for additional processing, such as permission checks.</li>
+                </ul>
+                </p>
+                <h3>
+                    Core Methods
+                </h3>
+                <h4>
+                    Response::json()
+                </h4>
+                <p>
+                    Purpose: Sends a JSON response with data.
+                </p>
+                <ul>
+                    <li>
+                        Usage :
+                    </li>
+                </ul>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">Response::json($data, $message = null, $status = 200, $success = true);</span></div></code></pre>
+                    </div>
+                </div>
+                <ul>
+                    <li>
+                        Example :
+                    </li>
+                </ul>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span
+                                style="color: #dcdcdc">return Response::json($users);</span></div></code></pre>
+                    </div>
+                </div>
+                <h3>
+                    DbContext
+                </h3>
+                <ul>
+                    <li>
+                        Provides access to database entities.
+                    </li>
+                    <li>
+                        Usage :
+                    </li>
+                </ul>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">$users = DbContext::User()->all();</span></div></code></pre>
+                    </div>
+                </div>
+
+                <h3>
+                    Event Triggering (Optional)
+                </h3>
+                <ul>
+                    <li>Controlled via route definitions, allowing before/after event handling:</li>
+                </ul>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">$router->map('GET', '/users', 'User', 'UserController', 'index', 'UserRegisterEvent', 'after');</span></div></code></pre>
+                    </div>
+                </div>
+                <h3>
+                    Example Controller Structure
+                </h3>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color:white;">namespace App\entities\User\Controllers;</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">2</span><span style="color:white;">&nbsp;</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">3</span><span style="color:white;">use ebcore\framework\DB\DbContext;</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">4</span><span style="color:white;">use ebcore\framework\Module\Response;</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">5</span><span style="color:white;">&nbsp;</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">6</span><span style="color:white;">class UserController</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">7</span><span style="color:white;">{</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">8</span><span style="color:white;">    /**</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">9</span><span style="color:white;">     * Retrieves all users from the database and returns them as JSON.</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">10</span><span style="color:white;">     *</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">11</span><span
+                                style="color:white;">     * @return \JsonResponse</span></div><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">12</span><span style="color:white;">     */</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">13</span><span
+                                style="color:white;">    public function index()</span></div><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">14</span><span style="color:white;">    {</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">15</span><span style="color:white;">        // Fetch all user records</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">16</span><span style="color:white;">        $users = DbContext::User()->all();</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">17</span><span style="color:white"></span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">18</span><span
+                                style="color:white">        // Check if users exist</span></div><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">19</span><span
+                                style="color:white">        if (empty($users)) {</span></div><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">20</span><span style="color:white">            // Send a 404 JSON response if no users found</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">21</span><span style="color:white">            Response::json(null, "No users found", 404, false);</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">22</span><span style="color:white">        }</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">23</span><span style="color:white">        // Send retrieved users as JSON</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">24</span><span style="color:white">        return Response::json($users);</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">25</span><span style="color:white">    }</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">26</span><span style="color:white">}</span></div></code></pre>
+                    </div>
+                </div>
+                <h3>
+                    Summary
+                </h3>
+                <ul>
+                    <li>
+                        The framework controller acts as the backbone for implementing business logic.
+                    </li>
+                    <li>
+                        It simplifies response handling and database interactions.
+                    </li>
+                    <li>
+                        Supports event-driven architecture (before/after hooks).
+                    </li>
+                    <li>
+                        Middleware can be attached for permissions, authentication, etc.
+                    </li>
+                    <li>
+                        Ensures consistent response formatting and error handling across the application.
+                    </li>
+                </ul>
+            </div>
+            <!--Controllers-->
+
+            <!--Middleware-->
+            <div id="middleware" style="padding-top: 10px">
+                <h2>
+                    Middleware System
+                </h2>
+                <hr>
+                <p>
+                    Middleware in the framework acts as an intermediary layer between the incoming HTTP request and the
+                    application's core logic. It provides mechanisms to process, intercept, and modify requests and
+                    responses before reaching controllers or after their execution.
+                </p>
+                <h3>
+                    Overview
+                </h3>
+                <p>
+                    The primary purpose of middleware includes: authorization and authentication, logging, request
+                    modifications, error handling, and security enforcement.
+                </p>
+                <h3>
+                    Responsibilities
+                </h3>
+                <ul>
+                    <li>Authorization & Authentication: Verify if the user has the required permissions to access
+                        certain routes or resources.
+                    </li>
+                    <li>Logging & Monitoring: Record details about requests, user activities, or errors.</li>
+                    <li>Request/Response Handling: Modify or augment request data or responses before they reach
+                        controllers or after responses are generated.
+                    </li>
+                    <li>Error Handling: Catch and process exceptions or errors that occur during request processing.
+                    </li>
+                    <li>Security: Enforce security policies such as IP filtering, rate limiting, etc.</li>
+                </ul>
+                <h3>
+                    Structure and Workflow
+                </h3>
+                <p>
+                    A middleware class typically extends a base class BaseMiddleware and overrides the handle() method.
+                    Inside handle(), you implement your logic—the check, logging, modification, etc.
+                </p>
+                <ul>
+                    <li>If the request passes validation, calling parent::next() proceeds to the next middleware or
+                        controller.
+                    </li>
+                    <li>If the request fails the check (e.g., permission denied), you terminate the process and return a
+                        response directly, often with an error status.
+                    </li>
+                </ul>
+
+                <h3>
+                    Example Middleware: Permission Check
+                </h3>
+
+
+                <div class="code-container">
+                    <div class="relative code-block-wrapper"><pre><code style="background-color: #292D3E;"><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">1</span><span style="color:white;">&lt;?php</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">2</span> <span style="color:white;">namespace App\entities\User\Middlewares;</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">3</span> <span style="color:white;"></span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">4</span> <span style="color:white;">use ebcore\framework\Middlewares\BaseMiddleware;</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">5</span> <span style="color:white;">use ebcore\framework\Module\Response;</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">6</span> <span style="color:white;">use ebcore\framework\Packages\Logger\Logger;</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">7</span> <span style="color:white;">class CheckUserPermissionMiddleware extends BaseMiddleware</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">8</span> <span
+                            style="color:white;">{</span></div><div class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">9</span> <span
+                            style="color:white;">    private $requiredPermission;</span></div><div class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">10</span> <span style="color:white;">    /**</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">11</span> <span style="color:white;">     * Constructor to set the required permission.</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">12</span> <span style="color:white;">     * @param string $permission - The permission needed to proceed.</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">13</span> <span
+                            style="color:white;">     */</span></div><div class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">14</span> <span style="color:white;">    public function __construct($permission = 'view')</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">15</span> <span style="color:white;">    {</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">16</span> <span style="color:white;">        $this->requiredPermission = $permission;</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">17</span> <span style="color:white;">    }</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">18</span> <span
+                            style="color:white;">    /**</span></div><div class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">19</span> <span style="color:white;">     * Handle method to perform permission check and logging.</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">20</span> <span style="color:white;">     * This method is called for each request passing through this middleware.</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">21</span> <span
+                            style="color:white;">     */</span></div><div class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">22</span> <span
+                            style="color:white;">    public function handle()</span></div><div class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">23</span> <span style="color:white;">    {</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">24</span> <span style="color:white;">        // Check if the user has the required permission</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">25</span> <span style="color:white;">        if (!$this->checkPermission()) {</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">26</span> <span style="color:white;">            // Log a warning if permission is denied</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">27</span> <span style="color:white;">            Logger::warning("Permission denied for user", [</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">28</span> <span style="color:white;">                'permission' => $this->requiredPermission,</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">29</span> <span style="color:white;">                'user_id' => $_SESSION['user_id'] ?? null</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">30</span> <span style="color:white;">            ]);</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">31</span> <span style="color:white;">            // Return a JSON response with 403 Forbidden status</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">32</span> <span style="color:white;">            return Response::json(null, "You do not have the required permission", 403, false);</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">33</span> <span
+                            style="color:white;">        }</span></div><div class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">34</span> <span
+                            style="color:white;">        // If permission granted, continue to next middleware or controller</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">35</span> <span
+                            style="color:white;">        return parent::next();</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">36</span> <span style="color:white;">    }</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">37</span> <span
+                            style="color:white;"></span></div><div class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">38</span> <span
+                            style="color:white;">    /**</span></div><div class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">39</span> <span style="color:white;">     * Method to verify user permissions from the session or context.</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">40</span> <span style="color:white;">     * @return bool</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">41</span> <span
+                            style="color:white;">     */</span></div><div class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">42</span> <span style="color:white;">    private function checkPermission()</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">43</span> <span style="color:white;">    {</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">44</span> <span style="color:white;">        return isset($_SESSION['user_permissions']) &&</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">45</span> <span style="color:white;">               in_array($this->requiredPermission, $_SESSION['user_permissions']);</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">46</span> <span style="color:white;">    }</span></div><div
+                            class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">47</span> <span
+                            style="color:white;">}</span></div></code></pre>
+                    </div>
+                </div>
+
+
+                <h3>
+                    Usage Notes
+                </h3>
+                <ul>
+                    <li>
+                        Middleware is registered within route definitions, often with optional parameters configured in
+                        constructor.
+                    </li>
+                    <li>
+                        The order of middleware execution matters; they are processed sequentially.
+                    </li>
+                    <li>
+                        Middleware can access and modify request data, perform pre- or post-processing, and halt the
+                        request by returning a response early.
+                    </li>
+                </ul>
+                <h3>
+                    Summary
+                </h3>
+                <p>
+                    Middleware provides an essential layer for request filtering, security, logging, and
+                    request/response manipulation. Proper usage ensures modular and maintainable code, and enhances
+                    overall application security and observability.
+                </p>
+            </div>
+            <!--Middleware-->
+
+            <!--Event-->
+            <div id="events" style="padding-top: 10px">
+                <h2>
+                    Event System
+                </h2>
+                <hr>
+                <h3>
+                    Overview
+                </h3>
+                <p>
+                    Events in the framework facilitate decoupled execution of specific actions at certain points in the
+                    application lifecycle. They provide a way to trigger custom logic—such as logging, notifications,
+                    data processing—when particular actions occur. This architecture supports scalability,
+                    maintainability, and modular design.
+                </p>
+                <p>
+                    Key features include:
+                </p>
+                <ul>
+                    <li>Execution Control: Ensuring events are not executed multiple times unnecessarily.</li>
+                    <li>Error Handling: Managing exceptions during event execution.</li>
+                    <li>Flexible Triggering: Events can be invoked synchronously or asynchronously as needed.</li>
+                </ul>
+                <h3>
+                    Responsibilities
+                </h3>
+                <ul>
+                    <li>Implement Event Logic: Encapsulate specific functionality that occurs in response to system
+                        stimuli (e.g., user registration).
+                    </li>
+                    <li>Control Execution: Prevent duplicate runs, manage retry logic.</li>
+                    <li>Manage State: Mark events as executed or reset status as needed.</li>
+                    <li>Decouple Code: Allow independent modules to listen and respond to system events without tight
+                        coupling.
+                    </li>
+                </ul>
+
+                <h3>
+                    Structure and Workflow
+                </h3>
+
+                <h4>
+                    Extension of Base Event Class:
+                </h4>
+                <p>
+                    Events inherit from a core Events class, which provides execution control and other utilities.
+                </p>
+
+                <h4>
+                    Execution Method (execute()):
+                </h4>
+                <ul>
+                    <li>Contains the main functional logic to be run when the event is triggered.</li>
+                    <li>Checks if the event has already been executed to prevent reruns.</li>
+                    <li>Implements try-catch blocks for exception handling.</li>
+                    <li>Marks the event as successfully executed upon completion.</li>
+                </ul>
+
+                <h3>
+                    Example Code Breakdown: UserRegisterEvent
+                </h3>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc;">&lt;?php</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">2</span><span style="color: #dcdcdc;"> </span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">3</span><span style="color: #dcdcdc;">namespace App\entities\User\Events;</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">4</span><span style="color: #dcdcdc;"> </span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">5</span><span style="color: #dcdcdc;">use ebcore\framework\Core\Events;</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">6</span><span style="color: #dcdcdc;">use ebcore\framework\DB\DbContext;</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">7</span><span style="color: #dcdcdc;"> </span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">8</span><span style="color: #dcdcdc;">class UserRegisterEvent extends Events</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">9</span><span style="color: #dcdcdc;">{</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">10</span><span style="color: #dcdcdc;">    public function execute(): void</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">11</span><span style="color: #dcdcdc;">    {</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">12</span><span style="color: #dcdcdc;">        // Check if this event has already been executed</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">13</span><span style="color: #dcdcdc;">        if ($this->isExecuted('UserRegisterEvent')) {</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">14</span><span style="color: #dcdcdc;">            return;  // Exit if already run</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">15</span><span style="color: #dcdcdc;">        }</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">16</span><span style="color: #dcdcdc;"></span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">17</span><span style="color: #dcdcdc;">        try {</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">18</span><span style="color: #dcdcdc;">            // Prepare user data array</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">19</span><span
+                                style="color: #dcdcdc;">            $user = array();</span></div><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">20</span><span style="color: #dcdcdc;">            $user["name"] = "test1";                        // User's first name</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">21</span><span style="color: #dcdcdc;">            $user["family"] = "test1";                      // User's family name</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">22</span><span style="color: #dcdcdc;">            $user["created_at"] = date("Y/m/d h:i:sa");     // Current timestamp</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">23</span><span style="color: #dcdcdc;"></span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">24</span><span style="color: #dcdcdc;">            // Save new user to database</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">25</span><span style="color: #dcdcdc;">            DbContext::User()->create($user);</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">26</span><span style="color: #dcdcdc;"></span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">27</span><span style="color: #dcdcdc;">            // Mark event as executed to prevent reruns</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">28</span><span style="color: #dcdcdc;">            $this->markAsExecuted('UserRegisterEvent');</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">29</span><span style="color: #dcdcdc;">        } catch (\Exception $e) {</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">30</span><span style="color: #dcdcdc;">            // Reset execution status if error occurs</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">31</span><span style="color: #dcdcdc;">            $this->resetExecution('UserRegisterEvent');</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">32</span><span style="color: #dcdcdc;">            throw $e; // Re-throw exception for further handling</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">33</span><span style="color: #dcdcdc;">        }</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">34</span><span style="color: #dcdcdc;">    }</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">35</span><span style="color: #dcdcdc;">}</span></div></code></pre>
+                    </div>
+                </div>
+
+                <h4>Explanation:</h4>
+                <ul>
+                    <li>Namespace & Class Declaration:</li>
+                </ul>
+                <p>
+                    Located within App\entities\User\Events, the class inherits from the core Events class.
+                </p>
+                <ul>
+                    <li>execute() Method:</li>
+                </ul>
+                <p>
+                    Checks if this event has already been executed with $this->isExecuted().
+                    If not executed, attempts to create a new user in the database:
+                    Initializes user data array.
+                    Uses DbContext::User()->create() to insert data.
+                    Marks event as completed with $this->markAsExecuted().
+                    If an error occurs, resets the execution status with $this->resetExecution() to allow retries and
+                    rethrows the exception.
+                </p>
+
+                <h3>
+                    Usage and Triggering
+                </h3>
+                <p>
+                    Once defined, this event can be triggered programmatically where needed, for example:
+                </p>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">$event = new UserRegisterEvent();</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">$event->execute();</span></div></code></pre>
+                    </div>
+                </div>
+                <p>
+                    Or via event dispatcher mechanisms, depending on the framework's architecture.
+                </p>
+                <h3>
+                    Summary
+                </h3>
+                <ul>
+                    <li>The framework's event system allows creating small, self-contained routines that react to
+                        application points.
+                    </li>
+                    <li>They manage execution states, prevent duplicate runs, and handle exceptions gracefully.</li>
+                    <li>Events help in maintaining clean, decoupled, and scalable codebase by encapsulating logic that
+                        responds to specific system activities.
+                    </li>
+                </ul>
+            </div>
+            <!--End Event-->
+
+            <!--Cache-->
+            <div id="cache" style="padding-top: 10px">
+                <h2>
+                    Cache System
+                </h2>
+                <hr>
+                <h3>
+                    Overview
+                </h3>
+                <p>
+                    The Cache system provides an easy-to-use interface for caching data within the framework. It manages
+                    temporary storage of key-value pairs in the filesystem, improving performance by reducing repetitive
+                    data processing or database access. This class handles cache initialization, storage, retrieval,
+                    validation, and cleanup operations.
+                </p>
+                <h3>Namespace and Usage</h3>
+                <p>
+                    To utilize the cache functions, import the Cache class:
+                </p>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">use ebcore\framework\Core\Cache;</span></div></code></pre>
+                    </div>
+                </div>
+                <br>
+                <h3>Core Functions</h3>
+
+                <div>
+                    <h4>1. Cache::initialize()</h4>
+                    <b>Purpose:</b>
+                    <p>
+                        Prepares the cache environment by checking if the designated cache directory exists. If it does
+                        not exist, this method creates the directory with permissions set to 0777 to ensure read/write
+                        access.
+                    </p>
+                    <b>Usage:</b>
+                    <div class="code-container">
+                        <div class="relative code-block-wrapper">
+                            <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                    style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                    class="line-number">1</span><span style="color: #dcdcdc">Cache::initialize();</span></div></code></pre>
+                        </div>
+                    </div>
+                    <b>Details:</b>
+                    <ul>
+                        <li>Checks if /storage/cache directory exists.</li>
+                        <li>If absent, creates the directory and sets permissions to 0777.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>2. Cache::put($key, $value)</h4>
+                    <b>Purpose:</b>
+                    <p>
+                        Stores a value in the cache associated with a specific key.
+                    </p>
+                    <b>Parameters:</b>
+                    <ul>
+                        <li>$key (string): The identifier for the cached data.</li>
+                        <li>$value (mixed): The data to cache. Could be string, number, object, etc.</li>
+                    </ul>
+                    <b>Usage:</b>
+                    <div class="code-container">
+                        <div class="relative code-block-wrapper">
+                            <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                    style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                    class="line-number">1</span><span style="color: #dcdcdc">Cache::put("key1", "value");</span></div></code></pre>
+                        </div>
+                    </div>
+                    <b>Functionality:</b>
+                    <ul>
+                        <li>Creates or updates the cache file named after $key.</li>
+                        <li>Writes $value into the cache file.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>3. Cache::put($key, $value)</h4>
+                    <b>Purpose:</b>
+                    <p>
+                        Retrieves the cached data for a specified key.
+                    </p>
+                    <b>Parameters:</b>
+                    <ul>
+                        <li>$key (string): The identifier for the cached data.</li>
+                    </ul>
+                    <b>Returns:</b>
+                    <ul>
+                        <li>The cached value associated with $key, or null if the key does not exist.</li>
+                    </ul>
+                    <div class="code-container">
+                        <div class="relative code-block-wrapper">
+                            <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                    style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                    class="line-number">1</span><span style="color: #dcdcdc">$value = Cache::get("key1");</span></div></code></pre>
+                        </div>
+                    </div>
+                    <b>Notes:</b>
+                    <ul>
+                        <li>If the cache for $key does not exist, returns null.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>4. Cache::has($key)</h4>
+                    <b>Purpose:</b>
+                    <p>
+                        Checks whether a cache entry exists for the specified key.
+                    </p>
+                    <b>Parameters:</b>
+                    <ul>
+                        <li>$key (string): The key to verify.</li>
+                    </ul>
+                    <b>Returns:</b>
+                    <ul>
+                        <li>true if the cache exists for $key.</li>
+                        <li>false otherwise.</li>
+                    </ul>
+                    <b>Usage:</b>
+                    <div class="code-container">
+                        <div class="relative code-block-wrapper">
+                            <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                    style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                    class="line-number">1</span><span
+                                    style="color: #dcdcdc">if (Cache::has("key1")) {</span></div><div class="line"><span
+                                    style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                    class="line-number">2</span><span style="color: #dcdcdc">    // cache exists</span></div><div
+                                    class="line"><span
+                                    style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                    class="line-number">3</span><span style="color: #dcdcdc">}</span></div></code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>5. Cache::forget($key)</h4>
+                    <b>Purpose:</b>
+                    <p>
+                        Deletes the cache entry for the specified key from memory (filesystem).
+                    </p>
+                    <b>Parameters:</b>
+                    <ul>
+                        <li>$key (string): The key to delete.</li>
+                    </ul>
+                    <b>Usage:</b>
+                    <div class="code-container">
+                        <div class="relative code-block-wrapper">
+                            <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                    style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                    class="line-number">1</span><span
+                                    style="color: #dcdcdc">Cache::forget("key1");</span></div></code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>6. Cache::cleanup()</h4>
+                    <b>Purpose:</b>
+                    <p>
+                        Clears the entire cache directory, removing all cached entries.
+                    </p>
+                    <b>Usage:</b>
+                    <div class="code-container">
+                        <div class="relative code-block-wrapper">
+                            <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                    style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                    class="line-number">1</span><span
+                                    style="color: #dcdcdc">Cache::cleanup();</span></div></code></pre>
+                        </div>
+                    </div>
+                    <b>Notes:</b>
+                    <p>
+                        Useful for bulk clearing cache data to free up space or reset cache state.
+                    </p>
+                </div>
+
+                <div>
+                    <h4>7. Cache::decrement($key)</h4>
+                    <b>Purpose:</b>
+                    <p>
+                        Decreases the numeric value stored in cache for the specified key by one.
+                    </p>
+                    <b>Parameters:</b>
+                    <p>
+                        $key (string): The key whose value should be decreased.
+                    </p>
+                    <b>Usage:</b>
+                    <div class="code-container">
+                        <div class="relative code-block-wrapper">
+                            <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                    style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                    class="line-number">1</span><span
+                                    style="color: #dcdcdc">Cache::decrement("key1");</span></div></code></pre>
+                        </div>
+                    </div>
+                    <b>Prerequisites:</b>
+                    <ul>
+                        <li>
+                            The value stored under $key must be numeric.
+                        </li>
+                        <li>
+                            If not numeric, the behavior is undefined (may cause errors or no change).
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>7. Cache::increment($key)</h4>
+                    <b>Purpose:</b>
+                    <p>
+                        Increases the numeric value stored under the given key by one.
+                    </p>
+                    <b>Parameters:</b>
+                    <p>
+                        $key (string): The key to increment.
+                    </p>
+                    <b>Usage:</b>
+                    <div class="code-container">
+                        <div class="relative code-block-wrapper">
+                            <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                    style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                    class="line-number">1</span><span
+                                    style="color: #dcdcdc">Cache::increment("key1");</span></div></code></pre>
+                        </div>
+                    </div>
+                    <b>Prerequisites:</b>
+                    <ul>
+                        <li>
+                            The value associated with $key must be numeric.
+                        </li>
+                    </ul>
+                </div>
+
+                <h3>
+                    Initialization Strategy
+                </h3>
+                <p>
+                    Before performing cache operations, always initialize the cache environment:
+                </p>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span
+                                style="color: #dcdcdc">Cache::initialize();</span></div></code></pre>
+                    </div>
+                </div>
+                <p>
+                    This ensures the cache directory exists and is writable, preventing runtime errors.
+                </p>
+                <h3>
+                    Usage Example
+                </h3>
+                <div class="code-container">
+                    <div class="relative " style="text-align: left;">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc;">use ebcore\framework\Core\Cache;</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">2</span><span style="color: #dcdcdc;"> </span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">3</span><span
+                                style="color: #dcdcdc;">// Initialize cache system</span></div><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">4</span><span
+                                style="color: #dcdcdc;">Cache::initialize();</span></div><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">5</span><span style="color: #dcdcdc;"> </span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">6</span><span style="color: #dcdcdc;">// Store data</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">7</span><span style="color: #dcdcdc;">Cache::put("myKey", "Sample Data");</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">8</span><span style="color: #dcdcdc;"> </span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">9</span><span style="color: #dcdcdc;">// Retrieve data</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">10</span><span
+                                style="color: #dcdcdc;">$data = Cache::get("myKey");</span></div><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">11</span><span style="color: #dcdcdc;"> </span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">12</span><span
+                                style="color: #dcdcdc;">// Check existence</span></div><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">13</span><span
+                                style="color: #dcdcdc;">if (Cache::has("myKey")) {</span></div><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">14</span><span
+                                style="color: #dcdcdc;">    // Do something</span></div><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">15</span><span style="color: #dcdcdc;">}</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">16</span><span style="color: #dcdcdc;"></span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">17</span><span style="color: #dcdcdc;">// Increment/decrement</span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">18</span><span
+                                style="color: #dcdcdc;">Cache::increment("counter");</span></div><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">19</span><span
+                                style="color: #dcdcdc;">Cache::decrement("counter");</span></div><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">20</span><span style="color: #dcdcdc;"></span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">21</span><span
+                                style="color: #dcdcdc;">// Clear specific cache</span></div><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">22</span><span
+                                style="color: #dcdcdc;">Cache::forget("myKey");</span></div><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">23</span><span style="color: #dcdcdc;"></span></div><div
+                                class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">24</span><span
+                                style="color: #dcdcdc;">// Clear all cache</span></div><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">25</span><span
+                                style="color: #dcdcdc;">Cache::cleanup();</span></div></code></pre>
+                    </div>
+                </div>
+                <h3>
+                    Summary
+                </h3>
+                <p>This cache system offers a straightforward</p>
+            </div>
+            <!--End Cache-->
+
+
+            <!--Conclusion-->
+            <div style="padding-top: 10px">
+                <h2>
+                    Conclusion
+                </h2>
+                <hr>
+                <p>
+                    In summary, the framework provides a comprehensive set of tools that enable developers to build scalable, efficient, and maintainable applications. From routing requests with controllers and middleware to managing data through models, views, and events, each component plays a vital role in creating a cohesive architecture. The caching system further enhances performance by allowing temporary data storage, reducing database load, and speeding up response times. By utilizing these well-structured modules together, developers can develop robust applications with improved performance, better resource management, and easier maintainability. Mastery of these core components empowers developers to optimize their workflows and deliver high-quality software solutions.
+                </p>
+            </div>
+            <!--End Conclusion-->
+
+
+            <footer class="footer">
+                <small style="margin-bottom: 20px; display: inline-block">
+                    © 2025 - Ebcore Framework v1.0.0
+                </small>
+                <br/>
+                <div class="social-links">
+                    <a href="https://github.com/sajjadbandezadeh/ebcore-framework" target="_blank">
+                        <i class="ri-github-fill ri-xl"></i>
+                    </a>
+                </div>
+            </footer>
+        </main>
+        <div class="overlay"></div>
+    </div>
+</div>
+<!-- partial -->
+<script src='https://unpkg.com/@popperjs/core@2'></script>
+<script src="./script.js"></script>
 </body>
 </html>
