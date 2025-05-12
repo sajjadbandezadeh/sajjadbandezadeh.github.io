@@ -65,60 +65,6 @@
                                             <span class="menu-title">Deployment</span>
                                         </a>
                                     </li>
-                                    <!--                      <li class="menu-item sub-menu">-->
-                                    <!--                        <a href="#">-->
-                                    <!--                          <span class="menu-title">Forms</span>-->
-                                    <!--                        </a>-->
-                                    <!--                        <div class="sub-menu-list">-->
-                                    <!--                          <ul>-->
-                                    <!--                            <li class="menu-item">-->
-                                    <!--                              <a href="#">-->
-                                    <!--                                <span class="menu-title">Input</span>-->
-                                    <!--                              </a>-->
-                                    <!--                            </li>-->
-                                    <!--                            <li class="menu-item">-->
-                                    <!--                              <a href="#">-->
-                                    <!--                                <span class="menu-title">Select</span>-->
-                                    <!--                              </a>-->
-                                    <!--                            </li>-->
-                                    <!--                            <li class="menu-item sub-menu">-->
-                                    <!--                              <a href="#">-->
-                                    <!--                                <span class="menu-title">More</span>-->
-                                    <!--                              </a>-->
-                                    <!--                              <div class="sub-menu-list">-->
-                                    <!--                                <ul>-->
-                                    <!--                                  <li class="menu-item">-->
-                                    <!--                                    <a href="#">-->
-                                    <!--                                      <span class="menu-title">CheckBox</span>-->
-                                    <!--                                    </a>-->
-                                    <!--                                  </li>-->
-                                    <!--                                  <li class="menu-item">-->
-                                    <!--                                    <a href="#">-->
-                                    <!--                                      <span class="menu-title">Radio</span>-->
-                                    <!--                                    </a>-->
-                                    <!--                                  </li>-->
-                                    <!--                                  <li class="menu-item sub-menu">-->
-                                    <!--                                    <a href="#">-->
-                                    <!--                                      <span class="menu-title">Want more ?</span>-->
-                                    <!--                                      <span class="menu-suffix">&#x1F914;</span>-->
-                                    <!--                                    </a>-->
-                                    <!--                                    <div class="sub-menu-list">-->
-                                    <!--                                      <ul>-->
-                                    <!--                                        <li class="menu-item">-->
-                                    <!--                                          <a href="#">-->
-                                    <!--                                            <span class="menu-prefix">&#127881;</span>-->
-                                    <!--                                            <span class="menu-title">You made it </span>-->
-                                    <!--                                          </a>-->
-                                    <!--                                        </li>-->
-                                    <!--                                      </ul>-->
-                                    <!--                                    </div>-->
-                                    <!--                                  </li>-->
-                                    <!--                                </ul>-->
-                                    <!--                              </div>-->
-                                    <!--                            </li>-->
-                                    <!--                          </ul>-->
-                                    <!--                        </div>-->
-                                    <!--                      </li>-->
                                 </ul>
                             </div>
                         </li>
@@ -130,6 +76,11 @@
                         <li class="menu-item">
                             <a href="#controller">
                                 <span class="menu-title">Controllers</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#orm">
+                                <span class="menu-title">Ebcore ORM</span>
                             </a>
                         </li>
                         <li class="menu-item">
@@ -214,6 +165,7 @@
                 <ul>
                     <li>🏗️ Entity-Based Architecture</li>
                     <li>🛣️ Modern Routing System</li>
+                    <li>🧩 object-relational mapper (ORM)</li>
                     <li>🔒 Powerful Middleware System</li>
                     <li>⚡ Advanced Caching</li>
                     <li>🎯 Event System</li>
@@ -973,6 +925,355 @@
                 </ul>
             </div>
             <!--Controllers-->
+
+            <!--ORM-->
+            <div id="orm" style="padding-top: 10px">
+                <h1>Ebcore ORM Documentation</h1>
+                <hr>
+                <p>The Ebcore framework provides a powerful ORM (Object-Relational Mapping) system similar to Laravel's Eloquent, allowing you to interact with your database using expressive PHP syntax. Below is a detailed explanation of the available query methods.</p>
+
+                <h2>Basic Queries</h2>
+
+                <h3>Fetch All Records</h3>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">DbContext::User()->all();</span></div></code></pre>
+                    </div>
+                </div>
+                <ul>
+                    <li>Retrieves all records from the <code>users</code> table</li>
+                    <li>Equivalent to <code>SELECT * FROM users</code></li>
+                </ul>
+
+                <h3>Basic Query Construction</h3>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">DbContext::User()->newQuery()->get();</span></div></code></pre>
+                    </div>
+                </div>
+                <ul>
+                    <li>Creates a new query builder instance for the <code>users</code> table</li>
+                    <li>Gets all records without any filters</li>
+                    <li>Equivalent to <code>SELECT * FROM users</code></li>
+                </ul>
+
+                <h2>Conditional Queries (WHERE Clauses)</h2>
+
+                <h3>Equality Check</h3>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">DbContext::User()->newQuery()->where("id", "=", "227")->get();</span></div></code></pre>
+                    </div>
+                </div>
+                <ul>
+                    <li>Fetches records where <code>id</code> equals 227</li>
+                    <li>Equivalent to <code>SELECT * FROM users WHERE id = 227</code></li>
+                </ul>
+
+                <h3>Greater Than</h3>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">DbContext::User()->newQuery()->where("id", ">", "227")->get();</span></div></code></pre>
+                    </div>
+                </div>
+                <ul>
+                    <li>Fetches records where <code>id</code> is greater than 227</li>
+                    <li>Equivalent to <code>SELECT * FROM users WHERE id > 227</code></li>
+                </ul>
+
+                <h3>Less Than</h3>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">DbContext::User()->newQuery()->where("id", "<", "227")->get();</span></div></code></pre>
+                    </div>
+                </div>
+                <ul>
+                    <li>Fetches records where <code>id</code> is less than 227</li>
+                    <li>Equivalent to <code>SELECT * FROM users WHERE id < 227</code></li>
+                </ul>
+
+                <h3>Greater Than or Equal</h3>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">DbContext::User()->newQuery()->where("id", ">=", "227")->get();</span></div></code></pre>
+                    </div>
+                </div>
+                <ul>
+                    <li>Fetches records where <code>id</code> is greater than or equal to 227</li>
+                    <li>Equivalent to <code>SELECT * FROM users WHERE id >= 227</code></li>
+                </ul>
+
+                <h3>Less Than or Equal</h3>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">DbContext::User()->newQuery()->where("id", "<=", "227")->get();</span></div></code></pre>
+                    </div>
+                </div>
+                <ul>
+                    <li>Fetches records where <code>id</code> is less than or equal to 227</li>
+                    <li>Equivalent to <code>SELECT * FROM users WHERE id <= 227</code></li>
+                </ul>
+
+                <h3>Not Equal</h3>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">DbContext::User()->newQuery()->where("id", "<>", "227")->get();</span></div></code></pre>
+                    </div>
+                </div>
+                <ul>
+                    <li>Fetches records where <code>id</code> is not equal to 227</li>
+                    <li>Equivalent to <code>SELECT * FROM users WHERE id <> 227</code></li>
+                </ul>
+
+                <h3>LIKE Operator</h3>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">DbContext::User()->newQuery()->where("name", "like", "%test%")->get();</span></div></code></pre>
+                    </div>
+                </div>
+                <ul>
+                    <li>Fetches records where <code>name</code> contains "test"</li>
+                    <li>The <code>%</code> symbols are wildcards</li>
+                    <li>Equivalent to <code>SELECT * FROM users WHERE name LIKE '%test%'</code></li>
+                </ul>
+
+                <h3>Unsupported Operators</h3>
+                <div class="unsupported">
+                    <div class="code-container">
+                        <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">DbContext::User()->newQuery()->where("id", "BETWEEN", "50 AND 60")->get(); // NOT SUPPORTED</span></div></code></pre>
+                        </div>
+                    </div>
+                    <div class="code-container">
+                        <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">DbContext::User()->newQuery()->where("id", "IN", "(227,226)")->get(); // NOT SUPPORTED</span></div></code></pre>
+                        </div>
+                    </div>
+                    <p>These operators are currently not supported in Ebcore ORM</p>
+                </div>
+
+                <h2>Complex Conditions</h2>
+
+                <h3>OR Conditions</h3>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">DbContext::User()->newQuery()->orWhere("name", "=", "test1")->orWhere("family", "=", "test")->get();</span></div></code></pre>
+                    </div>
+                </div>
+                <ul>
+                    <li>Fetches records where either <code>name</code> equals "test1" OR <code>family</code> equals "test"</li>
+                    <li>Equivalent to <code>SELECT * FROM users WHERE name = 'test1' OR family = 'test'</code></li>
+                </ul>
+
+                <h3>Mixed AND/OR Conditions</h3>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">DbContext::User()->newQuery()->orWhere("name", "=", "test1")->Where("family", "=", "test1")->get();</span></div></code></pre>
+                    </div>
+                </div>
+                <ul>
+                    <li>Fetches records where (<code>name</code> equals "test1" OR another condition) AND <code>family</code> equals "test1"</li>
+                    <li>Equivalent to <code>SELECT * FROM users WHERE (name = 'test1' OR ...) AND family = 'test1'</code></li>
+                </ul>
+
+                <h3>Multiple AND Conditions</h3>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">DbContext::User()->newQuery()->Where("name", "=", "test1")->Where("family", "=", "test1")->get();</span></div></code></pre>
+                    </div>
+                </div>
+                <ul>
+                    <li>Fetches records where both <code>name</code> equals "test1" AND <code>family</code> equals "test1"</li>
+                    <li>Equivalent to <code>SELECT * FROM users WHERE name = 'test1' AND family = 'test1'</code></li>
+                </ul>
+
+                <h2>Sorting and Limiting Results</h2>
+
+                <h3>Sorting (ASC)</h3>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">DbContext::User()->newQuery()->orderBy('id','ASC')->get();</span></div></code></pre>
+                    </div>
+                </div>
+                <ul>
+                    <li>Retrieves all records ordered by <code>id</code> in ascending order</li>
+                    <li>Equivalent to <code>SELECT * FROM users ORDER BY id ASC</code></li>
+                </ul>
+
+                <h3>Sorting (DESC)</h3>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">DbContext::User()->newQuery()->orderBy('id','DESC')->get();</span></div></code></pre>
+                    </div>
+                </div>
+                <ul>
+                    <li>Retrieves all records ordered by <code>id</code> in descending order</li>
+                    <li>Equivalent to <code>SELECT * FROM users ORDER BY id DESC</code></li>
+                </ul>
+
+                <h3>Limiting Results</h3>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">DbContext::User()->newQuery()->fetch(10)->get();</span></div></code></pre>
+                    </div>
+                </div>
+                <ul>
+                    <li>Retrieves the last 10 records (default order)</li>
+                    <li>Equivalent to <code>SELECT * FROM users LIMIT 10</code></li>
+                </ul>
+
+                <h3>First 10 Records</h3>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">DbContext::User()->newQuery()->orderBy('id','ASC')->fetch(10)->get();</span></div></code></pre>
+                    </div>
+                </div>
+                <ul>
+                    <li>Retrieves the first 10 records when ordered by <code>id</code> ascending</li>
+                    <li>Equivalent to <code>SELECT * FROM users ORDER BY id ASC LIMIT 10</code></li>
+                </ul>
+
+                <h3>Last 10 Records</h3>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">DbContext::User()->newQuery()->orderBy('id','DESC')->fetch(10)->get();</span></div></code></pre>
+                    </div>
+                </div>
+                <ul>
+                    <li>Retrieves the last 10 records when ordered by <code>id</code> descending</li>
+                    <li>Equivalent to <code>SELECT * FROM users ORDER BY id DESC LIMIT 10</code></li>
+                </ul>
+
+                <h2>Complex Query Example</h2>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">DbContext::User()->newQuery()->where('name', 'LIKE', '%test%')->where('family', 'LIKE', '%test%')->orWhere('created_at', 'LIKE', '2025-03-17%')->orderBy('id','ASC')->fetch(10)->get();</span></div></code></pre>
+                    </div>
+                </div>
+                <ul>
+                    <li>Retrieves 10 records where:
+                        <ul>
+                            <li><code>name</code> contains "test" AND</li>
+                            <li><code>family</code> contains "test" OR</li>
+                            <li><code>created_at</code> is on March 17, 2025</li>
+                        </ul>
+                    </li>
+                    <li>Ordered by <code>id</code> in ascending order</li>
+                    <li>Equivalent to:
+                        <pre><code>SELECT * FROM users
+WHERE (name LIKE '%test%' AND family LIKE '%test%')
+OR created_at LIKE '2025-03-17%'
+ORDER BY id ASC
+LIMIT 10</code></pre>
+                    </li>
+                </ul>
+
+                <h2>Finding Specific Records</h2>
+
+                <h3>Find by ID</h3>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span
+                                style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                                class="line-number">1</span><span style="color: #dcdcdc">DbContext::User()->find(180);</span></div></code></pre>
+                    </div>
+                </div>
+                <ul>
+                    <li>Retrieves the record with <code>id</code> equal to 180</li>
+                    <li>Equivalent to <code>SELECT * FROM users WHERE id = 180</code></li>
+                </ul>
+
+                <h1>Ebcore ORM CRUD Operations</h1>
+
+                <h2>Create Operation</h2>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper"><pre><code style="background-color: #292D3E;"><div class="line"><span style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #dcdcdc">$user = array();</span></div><div class="line"><span style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #dcdcdc">$user["name"] = $name;</span></div><div class="line"><span style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #dcdcdc">$user["family"] = $family;</span></div><div class="line"><span style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #dcdcdc">$user["created_at"] = date("Y/m/d h:i:sa");</span></div><div class="line"><span style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"class="line-number">5</span><span style="color: #dcdcdc">$created_user = DbContext::User()->create($user);</span></div></code></pre></div>
+                </div>
+                <ul>
+                    <li>Creates a new user record with the provided data</li>
+                    <li>Accepts an array of field-value pairs for the new record</li>
+                    <li>Automatically sets the creation timestamp</li>
+                    <li>Returns the created user object (as associative array) if successful</li>
+                    <li>Returns <code>false</code> if creation failed</li>
+                    <li>Similar return format to update operation</li>
+                    <li>Equivalent to <code>INSERT INTO users (name, family, created_at) VALUES ('$name', '$family', '$formatted_date')</code></li>
+                </ul>
+
+
+                <h2>Update Operation</h2>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper">
+                        <pre><code style="background-color: #292D3E;"><div class="line"><span style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #dcdcdc">$user["name"] = $name;</span></div><div class="line"><span style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #dcdcdc">$updated_user = DbContext::User()->update([$user,$id]);</span></div></code></pre>
+                    </div>
+                </div>
+                <ul>
+                    <li>Updates user information for the specified ID</li>
+                    <li>Accepts an array of field-value pairs to update</li>
+                    <li>Returns the updated user object (as associative array) if successful</li>
+                    <li>Returns <code>false</code> if update failed</li>
+                    <li>The return value comes from <code>$stmt->fetch(\PDO::FETCH_ASSOC)</code></li>
+                    <li>Equivalent to <code>UPDATE users SET name = '$name' WHERE id = $id</code></li>
+                </ul>
+
+                <h2>Delete Operation</h2>
+                <div class="code-container">
+                    <div class="relative code-block-wrapper"><pre><code style="background-color: #292D3E;"><div class="line"><span
+                            style="color:#4c5374; text-align: right; -webkit-user-select: none; user-select: none;"
+                            class="line-number">1</span><span style="color: #dcdcdc">DbContext::User()->delete($id); // Return true or False</span></div></code></pre>
+                    </div>
+                </div>
+                <ul>
+                    <li>Deletes a user record with the specified ID</li>
+                    <li>Returns <code>true</code> if deletion was successful</li>
+                    <li>Returns <code>false</code> if deletion failed</li>
+                    <li>Equivalent to <code>DELETE FROM users WHERE id = $id</code></li>
+                </ul>
+
+                <div class="note">
+                    <p>This documentation covers the basic query building capabilities of Ebcore ORM. The fluent interface allows for chaining methods to build complex queries with ease.</p>
+                </div>
+            </div>
+            <!--End ORM-->
 
             <!--Middleware-->
             <div id="middleware" style="padding-top: 10px">
